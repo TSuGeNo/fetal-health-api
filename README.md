@@ -1,52 +1,38 @@
 # Fetal Health Prediction - Flask Backend
 
-A Flask API for predicting fetal health status based on cardiotocography (CTG) data.
+A Flask API for predicting fetal health status based on cardiotocography (CTG) data using Machine Learning.
 
-## 🚀 Heroku Deployment
+## 🚀 Render Deployment (FREE - No Credit Card Required)
 
-### Prerequisites
-- [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed
-- Git installed
-- Heroku account
+### Step 1: Create a GitHub Repository
 
-### Deployment Steps
+1. Go to [GitHub](https://github.com) and create a new repository
+2. Name it `fetal-health-api` (or any name you prefer)
+3. Keep it public
 
-1. **Login to Heroku**
-   ```bash
-   heroku login
-   ```
+### Step 2: Push Code to GitHub
 
-2. **Create a new Heroku app**
-   ```bash
-   heroku create your-app-name-fetal-health
-   ```
+```bash
+cd C:\Users\pradn\Desktop\fetal_android_app
+git remote add origin https://github.com/YOUR_USERNAME/fetal-health-api.git
+git branch -M main
+git push -u origin main
+```
 
-3. **Initialize Git (if not already)**
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   ```
+### Step 3: Deploy on Render
 
-4. **Deploy to Heroku**
-   ```bash
-   git push heroku main
-   ```
-   
-   Or if your branch is `master`:
-   ```bash
-   git push heroku master
-   ```
+1. Go to [Render.com](https://render.com) and sign up (free, no credit card)
+2. Click **"New +"** → **"Web Service"**
+3. Connect your GitHub account
+4. Select your `fetal-health-api` repository
+5. Configure the service:
+   - **Name**: `fetal-health-api`
+   - **Runtime**: `Python 3`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `gunicorn app:app`
+6. Click **"Create Web Service"**
 
-5. **Open the app**
-   ```bash
-   heroku open
-   ```
-
-### Files Required for Heroku
-- `Procfile` - Tells Heroku how to run the app
-- `requirements.txt` - Python dependencies
-- `runtime.txt` - Python version
+Your API will be live at: `https://fetal-health-api.onrender.com`
 
 ## 📱 API Endpoints
 
@@ -121,23 +107,15 @@ Content-Type: application/x-www-form-urlencoded
    python app.py
    ```
 
-4. **Test the API**
-   ```bash
-   curl -X POST http://127.0.0.1:5000/predict \
-     -d "baseline_value=120" \
-     -d "accelerations=0.0" \
-     # ... add all other parameters
-   ```
-
 ## 📱 Android App
 
 The `app/` directory contains an Android Studio project that connects to this API. 
 
-### To use with Heroku:
-1. Deploy the Flask app to Heroku
+### To use with Render:
+1. Deploy the Flask app to Render
 2. Update the API URL in `MainActivity.kt`:
    ```kotlin
-   val api = remember { FetalHealthApi("https://your-app-name.herokuapp.com") }
+   val api = remember { FetalHealthApi("https://your-app-name.onrender.com") }
    ```
 
 ### To test locally:
