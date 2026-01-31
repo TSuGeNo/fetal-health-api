@@ -94,9 +94,33 @@
 .predict-container {
     max-width: 1400px;
     margin: 0 auto;
-    padding: 120px 48px 80px;
+    padding: 100px 16px 60px;
     position: relative;
     z-index: 10;
+}
+
+@media (min-width: 375px) {
+    .predict-container {
+        padding: 100px 20px 60px;
+    }
+}
+
+@media (min-width: 480px) {
+    .predict-container {
+        padding: 100px 24px 60px;
+    }
+}
+
+@media (min-width: 768px) {
+    .predict-container {
+        padding: 110px 32px 70px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .predict-container {
+        padding: 120px 48px 80px;
+    }
 }
 
 /* =========================================
@@ -1288,10 +1312,6 @@
    RESPONSIVE
    ========================================= */
 @media (max-width: 1024px) {
-    .predict-container {
-        padding: 100px 24px 60px;
-    }
-
     .results-section {
         position: relative;
         top: 0;
@@ -1300,12 +1320,23 @@
 
 @media (max-width: 768px) {
     .predict-form {
-        padding: 24px;
+        padding: 20px;
+        border-radius: 24px;
     }
 
     .form-header {
         flex-direction: column;
         align-items: flex-start;
+        gap: 16px;
+    }
+
+    .form-title {
+        font-size: 1.25rem;
+    }
+
+    .sample-data-btn {
+        padding: 10px 16px;
+        font-size: 0.85rem;
     }
 
     .info-cards {
@@ -1315,5 +1346,402 @@
     .classification-content {
         flex-direction: column;
         align-items: flex-start;
+    }
+
+    .results-card {
+        padding: 20px;
+        border-radius: 24px;
+    }
+
+    .results-title {
+        font-size: 1.1rem;
+    }
+
+    .header-top-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .header-spacer {
+        display: none;
+    }
+
+    .back-link {
+        align-self: flex-start;
+    }
+
+    .predict-title {
+        font-size: 1.75rem;
+    }
+
+    .predict-subtitle {
+        font-size: 1rem;
+    }
+
+    .submit-btn {
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+
+    .field-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .field-input {
+        padding: 12px 14px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .predict-header {
+        margin-bottom: 40px;
+    }
+
+    .predict-form {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .form-header {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .form-title {
+        font-size: 1.1rem;
+        gap: 8px;
+    }
+
+    .form-title-icon {
+        font-size: 1rem;
+    }
+
+    .form-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .sample-data-btn {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+        border-radius: 12px;
+    }
+
+    .sample-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .progress-container {
+        margin-bottom: 24px;
+    }
+
+    .progress-text,
+    .progress-count {
+        font-size: 0.8rem;
+    }
+
+    .fields-grid {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+
+    .field-card {
+        padding: 14px;
+        border-radius: 12px;
+    }
+
+    .field-label {
+        margin-bottom: 10px;
+        gap: 6px;
+    }
+
+    .field-icon {
+        font-size: 0.9rem;
+    }
+
+    .field-name {
+        font-size: 0.85rem;
+    }
+
+    .field-unit {
+        font-size: 0.7rem;
+    }
+
+    .field-input {
+        padding: 10px 12px;
+        font-size: 0.9rem;
+        border-radius: 10px;
+    }
+
+    .field-description {
+        font-size: 0.7rem;
+        margin-top: 8px;
+    }
+
+    .submit-btn {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        border-radius: 14px;
+    }
+
+    .submit-icon {
+        font-size: 1.1rem;
+    }
+
+    .submit-arrow {
+        width: 18px;
+        height: 18px;
+    }
+
+    .header-badge {
+        padding: 8px 14px;
+        font-size: 0.75rem;
+    }
+
+    .badge-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .back-link {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+
+    .back-icon {
+        width: 14px;
+        height: 14px;
+    }
+
+    .predict-title {
+        font-size: 1.5rem;
+        margin-bottom: 14px;
+    }
+
+    .predict-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    /* Results section mobile adjustments */
+    .results-card {
+        padding: 16px;
+        border-radius: 20px;
+        margin-bottom: 16px;
+    }
+
+    .results-header {
+        margin-bottom: 16px;
+    }
+
+    .results-title {
+        font-size: 1rem;
+        gap: 10px;
+    }
+
+    .results-icon {
+        font-size: 1rem;
+    }
+
+    .empty-icon-container {
+        width: 64px;
+        height: 64px;
+        margin-bottom: 20px;
+    }
+
+    .empty-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .empty-title {
+        font-size: 1.1rem;
+    }
+
+    .empty-text {
+        font-size: 0.85rem;
+        margin-bottom: 20px;
+    }
+
+    .empty-features {
+        gap: 16px;
+    }
+
+    .empty-feature {
+        font-size: 0.8rem;
+    }
+
+    .loading-animation {
+        width: 80px;
+        height: 80px;
+    }
+
+    .loading-title {
+        font-size: 1rem;
+    }
+
+    .loading-text {
+        font-size: 0.85rem;
+    }
+
+    .result-main-card {
+        padding: 18px;
+        border-radius: 16px;
+    }
+
+    .result-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+        border-radius: 12px;
+    }
+
+    .result-status {
+        font-size: 1.25rem;
+    }
+
+    .result-description {
+        font-size: 0.85rem;
+        margin-bottom: 16px;
+    }
+
+    .confidence-bar {
+        padding-top: 14px;
+    }
+
+    .classification-card,
+    .guide-card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .classification-badge {
+        width: 48px;
+        height: 48px;
+        font-size: 1.5rem;
+        border-radius: 14px;
+    }
+
+    .guide-title {
+        font-size: 0.8rem;
+        margin-bottom: 12px;
+    }
+
+    .guide-items {
+        gap: 10px;
+    }
+
+    .guide-name {
+        font-size: 0.8rem;
+    }
+
+    .guide-desc {
+        font-size: 0.7rem;
+    }
+
+    .reset-btn {
+        padding: 14px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+    }
+
+    .reset-icon {
+        width: 16px;
+        height: 16px;
+    }
+
+    .info-card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .info-icon-box {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+        border-radius: 10px;
+    }
+
+    .info-title {
+        font-size: 0.75rem;
+    }
+
+    .info-text {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 375px) {
+    .predict-header {
+        margin-bottom: 32px;
+    }
+
+    .predict-form {
+        padding: 14px;
+        border-radius: 16px;
+    }
+
+    .form-title {
+        font-size: 1rem;
+    }
+
+    .form-subtitle {
+        font-size: 0.75rem;
+    }
+
+    .sample-data-btn {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .field-card {
+        padding: 12px;
+    }
+
+    .field-name {
+        font-size: 0.8rem;
+    }
+
+    .field-input {
+        padding: 10px;
+        font-size: 0.85rem;
+    }
+
+    .submit-btn {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+
+    .predict-title {
+        font-size: 1.35rem;
+    }
+
+    .predict-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .header-badge {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+
+    .results-card {
+        padding: 14px;
+    }
+
+    .result-main-card {
+        padding: 14px;
+    }
+
+    .result-status {
+        font-size: 1.1rem;
+    }
+
+    .result-badge {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
     }
 }

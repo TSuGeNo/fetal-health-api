@@ -414,22 +414,24 @@
 
 @media (max-width: 768px) {
     .fetal-hero {
-        padding: 100px 24px 280px;
+        padding: 90px 20px 60px;
+        min-height: auto;
     }
 
     .fetal-hero .product-image {
-        max-width: 300px;
+        max-width: 280px;
         height: auto;
     }
 
     .fetal-hero .neon-text-container {
         flex-direction: column;
         align-items: center;
-        gap: 250px;
+        gap: 180px;
+        padding: 0 16px;
     }
 
     .fetal-hero .neon-text {
-        font-size: 42px;
+        font-size: 36px;
     }
 
     .fetal-hero .glass-panel {
@@ -438,7 +440,8 @@
         left: auto;
         right: auto;
         max-width: 100%;
-        margin: 10px 24px;
+        margin: 12px 0;
+        padding: 20px;
     }
 
     .fetal-hero .glass-left,
@@ -453,15 +456,99 @@
         left: auto;
         bottom: auto;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 24px;
+    }
+
+    .fetal-hero .tagline {
+        font-size: 1.4rem;
     }
 
     .fetal-hero .bg-text-line {
-        font-size: 48px;
+        font-size: 42px;
     }
 
     .fetal-hero .scroll-indicator {
         display: none;
+    }
+
+    .fetal-hero .glow-1,
+    .fetal-hero .glow-2,
+    .fetal-hero .glow-3 {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .fetal-hero {
+        padding: 80px 16px 48px;
+    }
+
+    .fetal-hero .product-image {
+        max-width: 220px;
+    }
+
+    .fetal-hero .neon-text-container {
+        gap: 140px;
+    }
+
+    .fetal-hero .neon-text {
+        font-size: 28px;
+    }
+
+    .fetal-hero .glass-panel {
+        padding: 16px;
+        border-radius: 16px;
+        margin: 10px 0;
+    }
+
+    .fetal-hero .panel-title {
+        font-size: 0.75rem;
+        margin-bottom: 10px;
+    }
+
+    .fetal-hero .panel-description {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    .fetal-hero .panel-link {
+        font-size: 0.85rem;
+        margin-top: 14px;
+    }
+
+    .fetal-hero .tagline {
+        font-size: 1.2rem;
+    }
+
+    .fetal-hero .bg-text-line {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 375px) {
+    .fetal-hero {
+        padding: 72px 12px 40px;
+    }
+
+    .fetal-hero .product-image {
+        max-width: 180px;
+    }
+
+    .fetal-hero .neon-text {
+        font-size: 24px;
+    }
+
+    .fetal-hero .glass-panel {
+        padding: 14px;
+    }
+
+    .fetal-hero .panel-description {
+        font-size: 0.8rem;
+    }
+
+    .fetal-hero .tagline {
+        font-size: 1rem;
     }
 }
 

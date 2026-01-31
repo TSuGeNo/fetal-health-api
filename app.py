@@ -55,7 +55,6 @@ def health_check():
 
 
 @app.route('/predict', methods=['POST'])
-@app.route('/api/predict', methods=['POST'])
 def predict():
     try:
         # Collect and validate all input values
