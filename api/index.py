@@ -4,10 +4,17 @@ import numpy as np
 import pickle
 import os
 
-model = pickle.load(open('knn_model.pkl', 'rb'))
+# Get the directory where this file is located
+current_dir = os.path.dirname(os.path.abspath(__file__))
+# Go up one level to the root directory where knn_model.pkl is located
+root_dir = os.path.dirname(current_dir)
+model_path = os.path.join(root_dir, 'knn_model.pkl')
+
+# Load model
+model = pickle.load(open(model_path, 'rb'))
 
 app = Flask(__name__)
-CORS(app)  # Enable CORS for Android app
+CORS(app)  # Enable CORS for all origins
 
 # Define required fields for prediction (using underscores to match client request format)
 REQUIRED_FIELDS = [
@@ -43,30 +50,47 @@ def hello():
         'message': 'Fetal Health Prediction API',
         'version': '1.0.0',
         'endpoints': {
-            '/predict': 'POST - Predict fetal health status',
-            '/health': 'GET - Health check'
+            '/api/predict': 'POST - Predict fetal health status',
+            '/api/health': 'GET - Health check'
         }
     })
 
 
-@app.route('/health')
+@app.route('/api')
+def api_root():
+    return jsonify({
+        'message': 'Fetal Health Prediction API',
+        'version': '1.0.0',
+        'endpoints': {
+            '/api/predict': 'POST - Predict fetal health status',
+            '/api/health': 'GET - Health check'
+        }
+    })
+
+
+@app.route('/api/health')
 def health_check():
     return jsonify({'status': 'healthy'})
 
 
-@app.route('/predict', methods=['POST'])
 @app.route('/api/predict', methods=['POST'])
 def predict():
     try:
+        # Check if request is JSON or form data
+        if request.is_json:
+            data = request.get_json()
+        else:
+            data = request.form.to_dict()
+        
         # Collect and validate all input values
         values = []
         missing_fields = []
         invalid_fields = []
         
         for field in REQUIRED_FIELDS:
-            raw_value = request.form.get(field)
+            raw_value = data.get(field)
             
-            if raw_value is None or raw_value.strip() == '':
+            if raw_value is None or str(raw_value).strip() == '':
                 missing_fields.append(field)
             else:
                 try:
@@ -116,7 +140,5 @@ def predict():
         return jsonify({'error': str(e)}), 500
 
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host='0.0.0.0', port=port, debug=False)
-
+# This is the handler Vercel looks for
+app = app

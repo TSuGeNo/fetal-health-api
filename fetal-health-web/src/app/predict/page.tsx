@@ -57,7 +57,8 @@ export default function PredictPage() {
                 apiFormData.append(key, value);
             });
 
-            const response = await fetch('http://localhost:5000/predict', {
+            const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+            const response = await fetch(`${apiUrl}/api/predict`, {
                 method: 'POST',
                 body: apiFormData,
             });
